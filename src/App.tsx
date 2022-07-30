@@ -8,10 +8,10 @@ function App() {
     <div className="App">
       <div className="container">
         <NavBar />
-        <SectionComp name="TD3 Studios Home" color="#bbccdd" />
-        <SectionComp name="About" color="#88bbbb" />
-        <SectionComp name="Projects" color="#448899" />
-        <SectionComp name="Contact" color="#55aaaa" />
+        <SectionComp name="TD3 Home" color="#bbccdd" />
+        <SectionComp name="TD3 About" color="#88bbbb" />
+        <SectionComp name="TD3 Projects" color="#448899" />
+        <SectionComp name="TD3 Contact" color="#55aaaa" />
       </div>
     </div>
   );
