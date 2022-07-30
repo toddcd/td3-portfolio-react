@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "td3-studios-1558195353949"
+  },
+  "targets": {
+    "td3-studios-1558195353949": {
+      "hosting": {
+        "portfolio": [
+          "td3-studios-1558195353949"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
