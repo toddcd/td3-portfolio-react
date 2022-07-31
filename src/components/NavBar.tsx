@@ -15,6 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Switch from '@mui/material/Switch';
 import { FormGroup } from '@mui/material';
 import { FormControlLabel } from '@mui/material';
+// import { palette } from '@mui/system';
 
 const pages = ['Home', 'About', 'Projects', 'Contact'];
 
@@ -29,17 +30,17 @@ const ResponsiveAppBar = () => {
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    //setAnchorElUser(event.currentTarget);
-  };
+  // const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+  //   //setAnchorElUser(event.currentTarget);
+  // };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    //setAnchorElUser(null);
-  };
+  // const handleCloseUserMenu = () => {
+  //   //setAnchorElUser(null);
+  // };
 
   return (
     <AppBar position="fixed">
@@ -54,10 +55,9 @@ const ResponsiveAppBar = () => {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
+              letterSpacing: '.2rem',
+              color: 'text.secondary',
               textDecoration: 'none',
             }}
           >
@@ -110,21 +110,21 @@ const ResponsiveAppBar = () => {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: 'Helvetica',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'text.secondary',
               textDecoration: 'none',
             }}
           >
-            TD3 Studios
+            TD3
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'text.secondary', display: 'block' }}
               >
                 {page}
               </Button>

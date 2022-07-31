@@ -1,19 +1,36 @@
 import React from 'react';
-import './App.css';
-import SectionComp from './components/SectionComp';
+import Section from './components/Section';
+import Greeting from './components/Greeting';
 import NavBar from './components/NavBar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { Typography } from '@mui/material';
+import './App.css';
 
 const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
       main: '#D2D9C7',
+      light: '#DBE0D2',
+      dark: '#93978B',
+      contrastText: '#000000de',
     },
     secondary: {
       main: '#8DA633',
+      light: '#A3B75B',
+      dark: '#627423',
+      contrastText: '#000000de',
     },
+    text: {
+      primary: '#000000de',
+      secondary: '#0000008a',
+      disabled: '#00000061',
+    },
+    divider: '#000000de',
+  },
+  typography: {
+    fontFamily: 'Helvetica',
   },
 });
 
@@ -22,12 +39,14 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className="App">
-        <div className="container">
+        <div className="header">
           <NavBar />
-          <SectionComp name="TD3 Home" color="#F2F2F2" />
-          <SectionComp name="TD3 About" color="#D9D9D9" />
-          <SectionComp name="TD3 Projects" color="#F2F2F2" />
-          <SectionComp name="TD3 Contact" color="#D9D9D9" />
+        </div>
+        <div className="container odd">
+          <Greeting />
+          <Section title="01 / About" />
+          <Section title="02 / Projects" />
+          <Section title="03 / Contact" />
         </div>
       </div>
     </ThemeProvider>
