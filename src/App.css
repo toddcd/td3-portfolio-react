@@ -21,8 +21,9 @@
   width: 100vw;
   /* scroll-snap-align: start; */
   scroll-margin-top: 68.5px;
-  color: #FFFFFF;
+  /* color: #594D11; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
