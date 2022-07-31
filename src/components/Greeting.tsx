@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import SectionTitle from './SectionTitle';
+import { useMediaQuery } from '../utilities/Hooks';
 
 const bodyVariant = {};
 const h1Variant = {
@@ -21,6 +22,7 @@ const h3Variant = {
 
 function Greeting(props: any) {
   const { title } = props;
+  const isDesktop = useMediaQuery('(min-width: 960px)');
   return (
     <section className="section">
       <SectionTitle title={title} />
@@ -37,14 +39,35 @@ function Greeting(props: any) {
         }}
       >
         <motion.span variants={h1Variant}>
-          <Typography variant="h1" fontWeight="medium" textAlign="left">
+          <Typography
+            variant={isDesktop ? 'h1' : 'h3'}
+            fontWeight="medium"
+            textAlign="left"
+          >
             Todd C. Davis.
           </Typography>
         </motion.span>
         <motion.span variants={h3Variant}>
-          <Typography variant="h3" fontWeight="medium" textAlign="left">
-            Software Engineer / Product Manager
-          </Typography>
+          {isDesktop ? (
+            <Typography variant="h3" fontWeight="medium" textAlign="left">
+              {'Software Engineer / Product Manager'}
+            </Typography>
+          ) : (
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
+              <Typography variant="h5" fontWeight="medium" textAlign="left">
+                {'Software Engineer /'}
+              </Typography>
+              <Typography variant="h5" fontWeight="medium" textAlign="left">
+                {'Product Manager'}
+              </Typography>
+            </div>
+          )}
         </motion.span>
       </motion.div>
     </section>
