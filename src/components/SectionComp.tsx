@@ -6,7 +6,7 @@ const SectionComp = (props: any) => {
   const { name, color } = props;
 
   return (
-    <section id={name} className="section" style={{ background: color }}>
+    <section id={name} className="section">
       <div>
         <Slide
           direction="down"
